@@ -1,0 +1,40 @@
+﻿@model IEnumerable<HelmetStockManager.ViewModel.InactiveClient>
+
+@{
+    ViewData["Title"] = "Not Bought Report";
+}
+
+<h1>Not Bought Report</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfLastSale)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfLastSale)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

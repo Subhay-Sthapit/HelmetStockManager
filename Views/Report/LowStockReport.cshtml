@@ -1,0 +1,45 @@
+﻿@model IEnumerable<HelmetStockManager.ViewModel.LowStockViewModel>
+
+@{
+    ViewData["Title"] = "Low Stock Report";
+}
+
+<h1>Low Stock Report</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HelmetCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HelmetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HelmetQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HelmetCategory)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HelmetCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HelmetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HelmetQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HelmetCategory)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

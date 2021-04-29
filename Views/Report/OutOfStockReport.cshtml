@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HelmetStockManager.ViewModel.OutOfStockViewModel>
+
+@{
+    ViewData["Title"] = "Out of Stock Report";
+}
+
+<h1>Out of Stock Report</h1>
+
+<div class="float-right" style="margin-bottom: 15px;">
+    @using (Html.BeginForm("OutOfStockReport", "Report", FormMethod.Get))
+    {
+        <b>Sort: </b> @Html.RadioButton("option", "Name") <label> Name </label> @Html.RadioButton("option", "Date") <label> Date </label> <input class="btn btn-outline-secondary my-2 my-sm-0" type="submit" name="submit" value="Sort" />
+    }
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HelmetCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HelmetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HelmetQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HelmetCategory)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HelmetCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HelmetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HelmetQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HelmetCategory)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
