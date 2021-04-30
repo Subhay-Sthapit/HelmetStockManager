@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "View Reports ";
+}
+<div class="text-center">
+    <h1 class="display-5"> View The Following Reports</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">View Helmet Stock List Report</h5>
+                <p class="card-text">View the helmets available in stock with the details of the helmet</p>
+                <a asp-controller="Report" asp-action="HelmetStockListReport" class="btn btn-success">View Report</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">View Client Sale Report</h5>
+                <p class="card-text">View the purchase details of the clients.</p>
+                <a asp-controller="Report" asp-action="ClientSaleReport" class="btn btn-success">View Report</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">View Low Stock Report</h5>
+                <p class="card-text">View the helmets that are running low on stocks</p>
+                <a asp-controller="Report" asp-action="LowStockReport" class="btn btn-success">View Report</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">View Out of stock Helmets</h5>
+                <p class="card-text">View the Helmets that are Out of stock.</p>
+                <a asp-controller="Report" asp-action="OutOfStockReport" class="btn btn-success">View Report</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">View Inactive Clients</h5>
+                <p class="card-text">View the clients that are Inactive</p>
+                <a asp-controller="Report" asp-action="InactiveClientReport" class="btn btn-success">View Report</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">View the Unsold Helmets</h5>
+                <p class="card-text">View the Helmets that have not been sold</p>
+                <a asp-controller="Report" asp-action="UnsoldHelmetReport" class="btn btn-success">View Report</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+
+
