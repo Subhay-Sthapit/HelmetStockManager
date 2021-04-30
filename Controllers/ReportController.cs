@@ -22,6 +22,8 @@ namespace HelmetStockManager.Controllers
             return View();
         }
 
+        // number 5.6 displays the details of the helmets in stock. Helmet. Category. HelmetStock Search by Helmet Name
+        // HelmetStockViewModel
         public IActionResult HelmetStockListReport(string search)
         {
             List<HelmetStockViewModel> listData = new List<HelmetStockViewModel>();
@@ -56,6 +58,8 @@ namespace HelmetStockManager.Controllers
             }
         }
 
+        // Number 8 Client Sale Details of the last 31 days.
+        // Client. HelmetSale. HelmetSaleDetail. #Search by Client Name Uses ClientSaleVeiwModel
         public IActionResult ClientSaleReport(string search)
         {
             List<ClientSaleViewModel> listData = new List<ClientSaleViewModel>();
@@ -87,6 +91,7 @@ namespace HelmetStockManager.Controllers
             return View(listData.Where(x => x.ClientName == search && x.DateOfSale > monthBefore));
         }
 
+        // Number 9. Dispaly Helmet Details if HelmeStock < 10. Helmet. Category. HelmetStock. LowStockViewModel
         public IActionResult LowStockReport()
         {
             List<LowStockViewModel> listData = new List<LowStockViewModel>();
@@ -113,6 +118,7 @@ namespace HelmetStockManager.Controllers
             return View(listData.Where(x => x.HelmetQuantity < 10 && x.HelmetQuantity != 0));
         }
 
+        // 11. Displays Details of Helmets that are out of stock. Helmet. Category. HelmetStock. Purchase. PurchaseDescription OutOfStockViewModel
         public IActionResult OutOfStockReport(string option)
         {
             List<OutOfStockViewModel> listData = new List<OutOfStockViewModel>();
@@ -154,6 +160,7 @@ namespace HelmetStockManager.Controllers
         }
 
 
+        // 12 displays details of client who have been inactive for more than 31 days. Client. HelmetSale
         public IActionResult InactiveClientReport()
         {
             List<InactiveClient> listData = new List<InactiveClient>();
@@ -182,6 +189,8 @@ namespace HelmetStockManager.Controllers
             return View(listData.Where(x => x.DateOfLastSale < monthBefore));
         }
 
+        // Displays helmets that have not been sold in the last 31 days.
+        // Helmet. Helmetstock. HelmetSaleDetail. HelmetSale
         public IActionResult UnsoldHelmetReport()
         {
             List<UnsoldHelmetsViewModel> listData = new List<UnsoldHelmetsViewModel>();
